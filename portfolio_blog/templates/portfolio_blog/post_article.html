@@ -5,7 +5,18 @@
     <title>Blog</title>
 </head>
 <body>
-    <p>My first text. YAY!</p>
-    <p>Once more. Hello world!!!</p>
+
+<div>
+    <h1><a href="/">Code and Coffee Blog</a></h1>
+</div>
+
+{% for post_article in post_articles %}
+    <div>
+        <p>Publicado em: {{ post_article.published_date }}</p>
+        <h2><a href="">{{ post_article.title }}</a></h2>
+        <p>{{ post_article.article|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+
 </body>
 </html>
